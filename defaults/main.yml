@@ -1,0 +1,4 @@
+---
+rancher_version: "v2.11.1"
+rancher_http_port: 8080
+rancher_https_port: 8443

@@ -1,0 +1,15 @@
+services:
+  rancher:
+    image: rancher/rancher:{{ rancher_version }}
+    ports:
+      - "{{ rancher_http_port }}:80"
+      - "{{ rancher_https_port }}:443"
+    command: ["--no-cacerts"]
+    volumes:
+      - rancher:/var/lib/rancher
+    restart: unless-stopped
+    privileged: true
+
+volumes:
+  rancher:
+    driver: local

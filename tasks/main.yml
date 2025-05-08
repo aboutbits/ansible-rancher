@@ -1,0 +1,19 @@
+---
+- name: Create /var/docker/rancher directory
+  ansible.builtin.file:
+    dest: /var/docker/rancher
+    state: directory
+    mode: 0755
+
+- name: Copy docker-compose.yml file
+  ansible.builtin.template:
+    src: docker-compose.j2
+    dest: /var/docker/rancher/docker-compose.yml
+    mode: 0640
+
+- name: Start the Rancher containers
+  community.docker.docker_compose_v2:
+    project_src: /var/docker/rancher
+    state: present
+    pull: always
+    recreate: always
