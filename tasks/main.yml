@@ -16,4 +16,5 @@
     project_src: /var/docker/rancher
     state: present
     pull: always
+    build: always
     recreate: always
