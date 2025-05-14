@@ -9,7 +9,6 @@ A role to install and configure Rancher.
 ## Role Variables
 
 - `rancher_version`: Specifies the version of Rancher (Optional)
-- `rancher_url`: Specifies the URL of Rancher under which it is reachable (Required)
 - `rancher_http_port`: Specifies the HTTP port of Rancher (Optional)
 - `rancher_https_port`: Specifies the HTTPS port of Rancher (Optional)
 - `rancher_bootstrap_password`: Specifies the bootstrap password (Required)
@@ -23,7 +22,6 @@ A role to install and configure Rancher.
         name: ansible-rancher
       vars:
         rancher_version: "v2.11.1"
-        rancher_url: "https://rancher.example.com"
         rancher_bootstrap_password: "password"
 ```
 
