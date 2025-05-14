@@ -6,7 +6,7 @@ services:
       - "{{ rancher_https_port }}:443"
     command: ["--no-cacerts"]
     environment:
-      CATTLE_BOOTSTRAP_PASSWORD={{ rancher_admin_password }}
+      CATTLE_BOOTSTRAP_PASSWORD={{ rancher_bootstrap_password }}
       CATTLE_SERVER_URL={{ rancher_url }}
     volumes:
       - rancher:/var/lib/rancher
