@@ -18,3 +18,15 @@
     pull: always
     build: always
     recreate: always
+
+- name: Wait for 10 seconds
+  ansible.builtin.wait_for:
+        timeout: 10
+
+- name: Generate API token
+  ansible.builtin.uri:
+    url: "{{ rancher_url }}/v3-public/localProviders/local?action=login"
+    method: POST
+    body: "{{ lookup('ansible.builtin.template','token.j2') }}"
+    status_code: 201
+    body_format: json
